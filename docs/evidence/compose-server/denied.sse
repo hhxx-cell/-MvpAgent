@@ -1,0 +1,27 @@
+event: step.started
+data: {"step":"route","message":"正在识别请求"}
+
+event: step.started
+data: {"step":"retrieve","message":"正在处理请求"}
+
+event: step.started
+data: {"step":"sql","message":"正在处理请求"}
+
+event: step.started
+data: {"step":"tools","message":"正在处理请求"}
+
+event: tool.started
+data: {"tool":"query_order","status":"started","summary":"工具调用状态已更新"}
+
+event: tool.completed
+data: {"tool":"query_order","status":"failed","summary":"工具调用状态已更新"}
+
+event: step.started
+data: {"step":"compose","message":"正在处理请求"}
+
+event: message.delta
+data: {"content":"未找到或无权访问该订单。"}
+
+event: done
+data: {"trace_id":"tr_16e1ae0aab2d4722a36c36e6c321eea7","citations":[]}
+

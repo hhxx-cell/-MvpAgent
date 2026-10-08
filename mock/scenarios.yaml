@@ -1,0 +1,14 @@
+version: 1
+scenarios:
+  success:
+    description: 正常返回
+  rate_limit:
+    description: 固定返回 429，供有界重试与 Retry-After 测试
+    status_code: 429
+    retry_after_seconds: 1
+  timeout:
+    description: 延迟响应，供客户端读超时和截止时间测试
+    delay_seconds: 6
+  server_error:
+    description: 固定返回 500，供退避与降级测试
+    status_code: 500

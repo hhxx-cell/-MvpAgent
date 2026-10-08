@@ -1,0 +1,4 @@
+NAME                             IMAGE                         COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+aftersales-data-agent-api-1      aftersales-data-agent:local   "python -m uvicorn a…"   api       17 minutes ago   Up 17 minutes (healthy)   127.0.0.1:8000->8000/tcp, 8081/tcp
+aftersales-data-agent-mock-1     aftersales-data-agent:local   "python -m uvicorn m…"   mock      17 minutes ago   Up 17 minutes (healthy)   8000/tcp, 8081/tcp
+aftersales-data-agent-qdrant-1   qdrant/qdrant:v1.13.6         "./entrypoint.sh"        qdrant    17 minutes ago   Up 17 minutes             127.0.0.1:6333->6333/tcp, 6334/tcp

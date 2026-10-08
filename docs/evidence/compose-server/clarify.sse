@@ -1,0 +1,15 @@
+event: step.started
+data: {"step":"route","message":"正在识别请求"}
+
+event: step.started
+data: {"step":"clarify","message":"正在处理请求"}
+
+event: step.started
+data: {"step":"compose","message":"正在处理请求"}
+
+event: message.delta
+data: {"content":"请提供订单号，例如 O00001。"}
+
+event: done
+data: {"trace_id":"tr_24dc1da2d89740a28b2d037ba4e3ca12","citations":[]}
+

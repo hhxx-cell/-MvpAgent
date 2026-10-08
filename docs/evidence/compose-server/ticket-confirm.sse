@@ -1,0 +1,18 @@
+event: step.started
+data: {"step":"route","message":"正在识别请求"}
+
+event: step.started
+data: {"step":"action","message":"正在处理请求"}
+
+event: tool.completed
+data: {"tool":"create_ticket","status":"created","summary":"工具调用状态已更新"}
+
+event: step.started
+data: {"step":"compose","message":"正在处理请求"}
+
+event: message.delta
+data: {"content":"工单已创建，工单号 TA68372B4D762。"}
+
+event: done
+data: {"trace_id":"tr_21723ebd342641bb96630d8abb21a595","citations":[]}
+

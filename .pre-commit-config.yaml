@@ -1,0 +1,12 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.16.8
+    hooks:
+      - id: ruff-check
+  - repo: local
+    hooks:
+      - id: black-check
+        name: black-check
+        entry: uv run --frozen --extra dev black --check
+        language: system
+        types: [python]

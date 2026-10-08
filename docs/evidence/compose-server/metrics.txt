@@ -1,0 +1,177 @@
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 13276.0
+python_gc_objects_collected_total{generation="1"} 3058.0
+python_gc_objects_collected_total{generation="2"} 40.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 409.0
+python_gc_collections_total{generation="1"} 37.0
+python_gc_collections_total{generation="2"} 3.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="12",patchlevel="14",version="3.12.14"} 1.0
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 7.63953152e+08
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 1.74923776e+08
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.79065234794e+09
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 5.99
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 21.0
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1024.0
+# HELP http_requests_total HTTP requests
+# TYPE http_requests_total counter
+http_requests_total{route="chat",status="ok"} 58.0
+# HELP http_requests_created HTTP requests
+# TYPE http_requests_created gauge
+http_requests_created{route="chat",status="ok"} 1.7906527183470874e+09
+# HELP http_request_duration_seconds HTTP duration
+# TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{le="0.005",route="chat"} 0.0
+http_request_duration_seconds_bucket{le="0.01",route="chat"} 12.0
+http_request_duration_seconds_bucket{le="0.025",route="chat"} 41.0
+http_request_duration_seconds_bucket{le="0.05",route="chat"} 51.0
+http_request_duration_seconds_bucket{le="0.075",route="chat"} 58.0
+http_request_duration_seconds_bucket{le="0.1",route="chat"} 58.0
+http_request_duration_seconds_bucket{le="0.25",route="chat"} 58.0
+http_request_duration_seconds_bucket{le="0.5",route="chat"} 58.0
+http_request_duration_seconds_bucket{le="0.75",route="chat"} 58.0
+http_request_duration_seconds_bucket{le="1.0",route="chat"} 58.0
+http_request_duration_seconds_bucket{le="2.5",route="chat"} 58.0
+http_request_duration_seconds_bucket{le="5.0",route="chat"} 58.0
+http_request_duration_seconds_bucket{le="7.5",route="chat"} 58.0
+http_request_duration_seconds_bucket{le="10.0",route="chat"} 58.0
+http_request_duration_seconds_bucket{le="+Inf",route="chat"} 58.0
+http_request_duration_seconds_count{route="chat"} 58.0
+http_request_duration_seconds_sum{route="chat"} 1.3528855107724667
+# HELP http_request_duration_seconds_created HTTP duration
+# TYPE http_request_duration_seconds_created gauge
+http_request_duration_seconds_created{route="chat"} 1.7906527183470223e+09
+# HELP agent_route_total Agent routes
+# TYPE agent_route_total counter
+agent_route_total{intent="rag"} 22.0
+agent_route_total{intent="sql"} 11.0
+agent_route_total{intent="order"} 6.0
+agent_route_total{intent="logistics"} 5.0
+agent_route_total{intent="ticket"} 7.0
+agent_route_total{intent="action"} 7.0
+# HELP agent_route_created Agent routes
+# TYPE agent_route_created gauge
+agent_route_created{intent="rag"} 1.7906527183132038e+09
+agent_route_created{intent="sql"} 1.7906527183805883e+09
+agent_route_created{intent="order"} 1.7906527184435606e+09
+agent_route_created{intent="logistics"} 1.7906527185355341e+09
+agent_route_created{intent="ticket"} 1.7906527185726867e+09
+agent_route_created{intent="action"} 1.7906527186422439e+09
+# HELP rag_retrieval_duration_seconds RAG duration
+# TYPE rag_retrieval_duration_seconds histogram
+rag_retrieval_duration_seconds_bucket{le="0.005"} 6.0
+rag_retrieval_duration_seconds_bucket{le="0.01"} 6.0
+rag_retrieval_duration_seconds_bucket{le="0.025"} 7.0
+rag_retrieval_duration_seconds_bucket{le="0.05"} 22.0
+rag_retrieval_duration_seconds_bucket{le="0.075"} 22.0
+rag_retrieval_duration_seconds_bucket{le="0.1"} 22.0
+rag_retrieval_duration_seconds_bucket{le="0.25"} 22.0
+rag_retrieval_duration_seconds_bucket{le="0.5"} 22.0
+rag_retrieval_duration_seconds_bucket{le="0.75"} 22.0
+rag_retrieval_duration_seconds_bucket{le="1.0"} 22.0
+rag_retrieval_duration_seconds_bucket{le="2.5"} 22.0
+rag_retrieval_duration_seconds_bucket{le="5.0"} 22.0
+rag_retrieval_duration_seconds_bucket{le="7.5"} 22.0
+rag_retrieval_duration_seconds_bucket{le="10.0"} 22.0
+rag_retrieval_duration_seconds_bucket{le="+Inf"} 22.0
+rag_retrieval_duration_seconds_count 22.0
+rag_retrieval_duration_seconds_sum 0.666513143107295
+# HELP rag_retrieval_duration_seconds_created RAG duration
+# TYPE rag_retrieval_duration_seconds_created gauge
+rag_retrieval_duration_seconds_created 1.790652352706468e+09
+# HELP rag_no_evidence_total RAG without usable evidence
+# TYPE rag_no_evidence_total counter
+rag_no_evidence_total 0.0
+# HELP rag_no_evidence_created RAG without usable evidence
+# TYPE rag_no_evidence_created gauge
+rag_no_evidence_created 1.7906523527065156e+09
+# HELP sql_validation_rejected_total SQL rejected
+# TYPE sql_validation_rejected_total counter
+# HELP sql_execution_duration_seconds SQL execution duration
+# TYPE sql_execution_duration_seconds histogram
+sql_execution_duration_seconds_bucket{le="0.005"} 0.0
+sql_execution_duration_seconds_bucket{le="0.01"} 10.0
+sql_execution_duration_seconds_bucket{le="0.025"} 11.0
+sql_execution_duration_seconds_bucket{le="0.05"} 11.0
+sql_execution_duration_seconds_bucket{le="0.075"} 11.0
+sql_execution_duration_seconds_bucket{le="0.1"} 11.0
+sql_execution_duration_seconds_bucket{le="0.25"} 11.0
+sql_execution_duration_seconds_bucket{le="0.5"} 11.0
+sql_execution_duration_seconds_bucket{le="0.75"} 11.0
+sql_execution_duration_seconds_bucket{le="1.0"} 11.0
+sql_execution_duration_seconds_bucket{le="2.5"} 11.0
+sql_execution_duration_seconds_bucket{le="5.0"} 11.0
+sql_execution_duration_seconds_bucket{le="7.5"} 11.0
+sql_execution_duration_seconds_bucket{le="10.0"} 11.0
+sql_execution_duration_seconds_bucket{le="+Inf"} 11.0
+sql_execution_duration_seconds_count 11.0
+sql_execution_duration_seconds_sum 0.08566510491073132
+# HELP sql_execution_duration_seconds_created SQL execution duration
+# TYPE sql_execution_duration_seconds_created gauge
+sql_execution_duration_seconds_created 1.790652352706537e+09
+# HELP sql_correction_total SQL corrections
+# TYPE sql_correction_total counter
+sql_correction_total 0.0
+# HELP sql_correction_created SQL corrections
+# TYPE sql_correction_created gauge
+sql_correction_created 1.7906523527065682e+09
+# HELP tool_calls_total Tool calls
+# TYPE tool_calls_total counter
+tool_calls_total{status="success",tool="query_order"} 11.0
+tool_calls_total{status="success",tool="create_ticket"} 3.0
+tool_calls_total{status="success",tool="query_logistics"} 2.0
+# HELP tool_calls_created Tool calls
+# TYPE tool_calls_created gauge
+tool_calls_created{status="success",tool="query_order"} 1.7906527184486265e+09
+tool_calls_created{status="success",tool="create_ticket"} 1.7906527186526282e+09
+tool_calls_created{status="success",tool="query_logistics"} 1.7906528879450681e+09
+# HELP tool_retry_total Tool retries
+# TYPE tool_retry_total counter
+# HELP tool_failure_total Tool failures
+# TYPE tool_failure_total counter
+tool_failure_total{reason="authorization_or_missing",tool="query_order"} 3.0
+# HELP tool_failure_created Tool failures
+# TYPE tool_failure_created gauge
+tool_failure_created{reason="authorization_or_missing",tool="query_order"} 1.7906527184988635e+09
+# HELP sse_connections_active Active SSE connections
+# TYPE sse_connections_active gauge
+sse_connections_active 0.0
+# HELP llm_tokens_total Model tokens
+# TYPE llm_tokens_total counter
+llm_tokens_total{provider="rules"} 0.0
+# HELP llm_tokens_created Model tokens
+# TYPE llm_tokens_created gauge
+llm_tokens_created{provider="rules"} 1.7906527183131855e+09
+# HELP ticket_created_total Created tickets
+# TYPE ticket_created_total counter
+ticket_created_total 3.0
+# HELP ticket_created_created Created tickets
+# TYPE ticket_created_created gauge
+ticket_created_created 1.7906523527066233e+09
+# HELP ticket_idempotency_hit_total Idempotency hits
+# TYPE ticket_idempotency_hit_total counter
+ticket_idempotency_hit_total 3.0
+# HELP ticket_idempotency_hit_created Idempotency hits
+# TYPE ticket_idempotency_hit_created gauge
+ticket_idempotency_hit_created 1.7906523527066302e+09

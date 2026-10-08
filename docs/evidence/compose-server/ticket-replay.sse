@@ -1,0 +1,15 @@
+event: step.started
+data: {"step":"route","message":"正在识别请求"}
+
+event: step.started
+data: {"step":"action","message":"正在处理请求"}
+
+event: step.started
+data: {"step":"compose","message":"正在处理请求"}
+
+event: message.delta
+data: {"content":"工单已创建，工单号 TA68372B4D762。"}
+
+event: done
+data: {"trace_id":"tr_aa531e5a8aa64d4c941375ca0d8675dc","citations":[]}
+

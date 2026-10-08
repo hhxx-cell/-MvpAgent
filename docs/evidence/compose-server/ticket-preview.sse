@@ -1,0 +1,33 @@
+event: step.started
+data: {"step":"route","message":"正在识别请求"}
+
+event: step.started
+data: {"step":"retrieve","message":"正在处理请求"}
+
+event: step.started
+data: {"step":"sql","message":"正在处理请求"}
+
+event: step.started
+data: {"step":"tools","message":"正在处理请求"}
+
+event: tool.started
+data: {"tool":"query_order","status":"started","summary":"工具调用状态已更新"}
+
+event: tool.completed
+data: {"tool":"query_order","status":"success","summary":"工具调用已完成"}
+
+event: action.preview
+data: {"action_id":"act_5e400bb0ea2b44cdbdae8b44f8a810a4","expires_at":"2026-09-29T03:48:27.223848+00:00","action":"create_ticket","summary":"为订单 O00001 创建售后工单"}
+
+event: step.started
+data: {"step":"compose","message":"正在处理请求"}
+
+event: message.delta
+data: {"content":"订单 O00001 当前状态为退款失败，金额 658.00 元（CNY），查询时间 2026-09-"}
+
+event: message.delta
+data: {"content":"29T11:43:27+08:00。 如需创建售后工单，请确认上方操作预览。"}
+
+event: done
+data: {"trace_id":"tr_e3d972c8e3964a5484de2ca4de66bb96","citations":[]}
+

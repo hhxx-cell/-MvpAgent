@@ -1,0 +1,21 @@
+event: step.started
+data: {"step":"route","message":"正在识别请求"}
+
+event: step.started
+data: {"step":"retrieve","message":"正在处理请求"}
+
+event: step.started
+data: {"step":"sql","message":"正在处理请求"}
+
+event: step.started
+data: {"step":"tools","message":"正在处理请求"}
+
+event: step.started
+data: {"step":"compose","message":"正在处理请求"}
+
+event: message.delta
+data: {"content":"符合条件的消费金额为 9231.00 元（CNY），共 28 笔订单。"}
+
+event: done
+data: {"trace_id":"tr_af5f708895914d1187c627c1a4b34d79","citations":[]}
+

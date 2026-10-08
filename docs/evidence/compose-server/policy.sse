@@ -1,0 +1,30 @@
+event: step.started
+data: {"step":"route","message":"正在识别请求"}
+
+event: step.started
+data: {"step":"retrieve","message":"正在处理请求"}
+
+event: step.started
+data: {"step":"sql","message":"正在处理请求"}
+
+event: step.started
+data: {"step":"tools","message":"正在处理请求"}
+
+event: step.started
+data: {"step":"compose","message":"正在处理请求"}
+
+event: message.delta
+data: {"content":"签收后 15 个自然日内可申请退货；商品应保持可再次销售状态，配件和赠品需一并退回。 定制商品和明确"}
+
+event: message.delta
+data: {"content":"标注不适用退货的商品需人工核验。 来源：return_policy_v3.md [p-002]（生效"}
+
+event: message.delta
+data: {"content":"日期 2026-06-01）、return_policy_v3.md [p-003]（生效日期 20"}
+
+event: message.delta
+data: {"content":"26-06-01）。知识库存在旧版本，以上采用最新已生效版本。"}
+
+event: done
+data: {"trace_id":"tr_c93e748eb0f146a1adf3f460096a0c73","citations":[{"source_file":"return_policy_v3.md","paragraph_id":"p-002","effective_date":"2026-06-01"},{"source_file":"return_policy_v3.md","paragraph_id":"p-003","effective_date":"2026-06-01"}]}
+

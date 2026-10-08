@@ -1,0 +1,5 @@
+{
+  "gateway": "rules",
+  "model_files": [],
+  "reason": "No model weights are used by the rules gateway."
+}

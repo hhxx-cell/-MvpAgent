@@ -1,0 +1,97 @@
+bundle-manifest.json: OK
+images.tar: OK
+install.sh: OK
+model-manifest.json: OK
+requirements.txt: OK
+source.tar.gz: OK
+wheelhouse/annotated_doc-0.0.5-py3-none-any.whl: OK
+wheelhouse/annotated_types-0.8.0-py3-none-any.whl: OK
+wheelhouse/anyio-4.15.1-py3-none-any.whl: OK
+wheelhouse/certifi-2026.7.22-py3-none-any.whl: OK
+wheelhouse/cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl: OK
+wheelhouse/charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl: OK
+wheelhouse/click-8.5.0-py3-none-any.whl: OK
+wheelhouse/cryptography-47.0.0-cp311-abi3-manylinux_2_34_x86_64.whl: OK
+wheelhouse/distro-1.9.0-py3-none-any.whl: OK
+wheelhouse/fastapi-0.141.1-py3-none-any.whl: OK
+wheelhouse/grpcio-1.84.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl: OK
+wheelhouse/h11-0.16.0-py3-none-any.whl: OK
+wheelhouse/h2-4.4.1-py3-none-any.whl: OK
+wheelhouse/hpack-4.2.0-py3-none-any.whl: OK
+wheelhouse/httpcore-1.0.9-py3-none-any.whl: OK
+wheelhouse/httpcore2-2.13.1-py3-none-any.whl: OK
+wheelhouse/httptools-0.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl: OK
+wheelhouse/httpx-0.28.1-py3-none-any.whl: OK
+wheelhouse/httpx2-2.13.1-py3-none-any.whl: OK
+wheelhouse/hyperframe-6.1.0-py3-none-any.whl: OK
+wheelhouse/idna-3.20-py3-none-any.whl: OK
+wheelhouse/jsonpatch-1.33-py2.py3-none-any.whl: OK
+wheelhouse/jsonpointer-3.1.1-py3-none-any.whl: OK
+wheelhouse/langchain_core-1.6.4-py3-none-any.whl: OK
+wheelhouse/langchain_protocol-0.0.19-py3-none-any.whl: OK
+wheelhouse/langgraph-1.2.12-py3-none-any.whl: OK
+wheelhouse/langgraph_checkpoint-4.2.0-py3-none-any.whl: OK
+wheelhouse/langgraph_prebuilt-1.1.0-py3-none-any.whl: OK
+wheelhouse/langgraph_sdk-0.4.5-py3-none-any.whl: OK
+wheelhouse/langsmith-0.14.0-py3-none-any.whl: OK
+wheelhouse/numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl: OK
+wheelhouse/orjson-3.12.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl: OK
+wheelhouse/ormsgpack-1.12.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl: OK
+wheelhouse/packaging-26.3-py3-none-any.whl: OK
+wheelhouse/portalocker-3.2.0-py3-none-any.whl: OK
+wheelhouse/prometheus_client-0.26.0-py3-none-any.whl: OK
+wheelhouse/protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl: OK
+wheelhouse/pycparser-3.0-py3-none-any.whl: OK
+wheelhouse/pydantic-2.13.5-py3-none-any.whl: OK
+wheelhouse/pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl: OK
+wheelhouse/pydantic_settings-2.15.0-py3-none-any.whl: OK
+wheelhouse/python_dotenv-1.2.3-py3-none-any.whl: OK
+wheelhouse/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl: OK
+wheelhouse/qdrant_client-1.19.1-py3-none-any.whl: OK
+wheelhouse/requests-2.34.2-py3-none-any.whl: OK
+wheelhouse/requests_toolbelt-1.0.0-py2.py3-none-any.whl: OK
+wheelhouse/sniffio-1.3.1-py3-none-any.whl: OK
+wheelhouse/sqlglot-29.0.1-py3-none-any.whl: OK
+wheelhouse/starlette-1.7.0-py3-none-any.whl: OK
+wheelhouse/tenacity-9.1.4-py3-none-any.whl: OK
+wheelhouse/truststore-0.10.4-py3-none-any.whl: OK
+wheelhouse/typing_extensions-4.16.0-py3-none-any.whl: OK
+wheelhouse/typing_inspection-0.4.4-py3-none-any.whl: OK
+wheelhouse/urllib3-2.8.0-py3-none-any.whl: OK
+wheelhouse/uuid_utils-0.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl: OK
+wheelhouse/uvicorn-0.53.0-py3-none-any.whl: OK
+wheelhouse/uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl: OK
+wheelhouse/watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl: OK
+wheelhouse/websockets-16.1.1-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl: OK
+wheelhouse/xxhash-4.0.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl: OK
+wheelhouse/zstandard-0.25.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl: OK
+Loaded image: aftersales-data-agent:local
+Loaded image: qdrant/qdrant:v1.13.6
+ Network aftersales-offline-package-check_default Creating 
+ Network aftersales-offline-package-check_default Created 
+ Volume aftersales-offline-package-check_qdrant_data Creating 
+ Volume aftersales-offline-package-check_qdrant_data Created 
+ Container aftersales-offline-package-check-qdrant-1 Creating 
+ Container aftersales-offline-package-check-qdrant-1 Created 
+ Container aftersales-offline-package-check-qdrant-1 Starting 
+ Container aftersales-offline-package-check-qdrant-1 Started 
+curl: (56) Recv failure: Connection reset by peer
+ Volume aftersales-offline-package-check_mock_ticket_data Creating 
+ Volume aftersales-offline-package-check_mock_ticket_data Created 
+ Volume aftersales-offline-package-check_agent_state_data Creating 
+ Volume aftersales-offline-package-check_agent_state_data Created 
+ Container aftersales-offline-package-check-mock-1 Creating 
+ Container aftersales-offline-package-check-qdrant-1 Running 
+ Container aftersales-offline-package-check-mock-1 Created 
+ Container aftersales-offline-package-check-api-1 Creating 
+ Container aftersales-offline-package-check-api-1 Created 
+ Container aftersales-offline-package-check-mock-1 Starting 
+ Container aftersales-offline-package-check-mock-1 Started 
+ Container aftersales-offline-package-check-mock-1 Waiting 
+ Container aftersales-offline-package-check-mock-1 Healthy 
+ Container aftersales-offline-package-check-api-1 Starting 
+ Container aftersales-offline-package-check-api-1 Started 
+curl: (56) Recv failure: Connection reset by peer
+curl: (56) Recv failure: Connection reset by peer
+{"status":"ok","ready":true,"components":{"database":"up","vector":"up","mock":"up","state":"up"}}
+Offline MVP is ready on http://127.0.0.1:18000

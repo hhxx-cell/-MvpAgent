@@ -1,0 +1,51 @@
+[project]
+name = "aftersales-data-agent"
+version = "0.1.0"
+description = "智能售后数据 Agent MVP"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.34,<1",
+  "pydantic-settings>=2.8,<3",
+  "httpx>=0.28,<1",
+  "langgraph>=0.4,<2",
+  "sqlglot>=26,<30",
+  "qdrant-client>=1.13,<2",
+  "prometheus-client>=0.21,<1",
+  "PyYAML>=6,<7",
+  "cryptography>=44,<48",
+]
+
+[project.optional-dependencies]
+dev = ["black>=25,<27", "pytest>=8,<10", "pytest-asyncio>=1,<2", "ruff>=0.11,<1"]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["agent", "api", "mock"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+extend-exclude = [".venv", ".uv-cache", "runtime"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.black]
+line-length = 120
+target-version = ["py312"]
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  \.venv
+  | \.uv-cache
+  | runtime
+)/
+'''

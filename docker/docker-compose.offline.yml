@@ -1,0 +1,93 @@
+name: aftersales-data-agent
+
+# Use with an image archive created by scripts/build_offline_bundle.py.
+# No service has a build context and no registry pull is permitted.
+x-common-env: &common-env
+  APP_ENV: development
+  DATABASE_PATH: /app/database/ecommerce.db
+  QDRANT_URL: http://qdrant:6333
+  MOCK_SERVER_URL: http://mock:8081
+  MOCK_RANDOM_SEED: ${MOCK_RANDOM_SEED:-20260923}
+  DATA_REFERENCE_TIME: ${DATA_REFERENCE_TIME:-}
+  MOCK_INTERNAL_KEY: ${MOCK_INTERNAL_KEY:-local-demo-internal-key}
+  MOCK_SCENARIO_CONTROL_ENABLED: "false"
+  METRICS_TOKEN: ${METRICS_TOKEN:-demo-metrics-token}
+  STATE_ENCRYPTION_KEY: ${STATE_ENCRYPTION_KEY:-}
+  PII_REDACTION_ENABLED: "true"
+
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.13.6
+    platform: linux/amd64
+    pull_policy: never
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${QDRANT_BIND_PORT:-6333}:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  mock:
+    image: aftersales-data-agent:local
+    platform: linux/amd64
+    pull_policy: never
+    restart: unless-stopped
+    environment:
+      <<: *common-env
+      MOCK_TICKET_DB_PATH: /app/runtime/mock_tickets.db
+    command:
+      - python
+      - -m
+      - uvicorn
+      - mock.mock_server:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8081"
+      - --no-access-log
+    volumes:
+      - mock_ticket_data:/app/runtime
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8081/health', timeout=2)"
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+
+  api:
+    image: aftersales-data-agent:local
+    platform: linux/amd64
+    pull_policy: never
+    restart: on-failure
+    depends_on:
+      qdrant:
+        condition: service_started
+      mock:
+        condition: service_healthy
+    environment:
+      <<: *common-env
+      STATE_DB_PATH: /app/runtime/agent_state.db
+      TRACE_ENABLED: "true"
+      LLM_PROVIDER: rules
+    ports:
+      - "127.0.0.1:${API_BIND_PORT:-8000}:8000"
+    volumes:
+      - agent_state_data:/app/runtime
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health?readiness=true', timeout=3)"
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+volumes:
+  qdrant_data:
+  mock_ticket_data:
+  agent_state_data:

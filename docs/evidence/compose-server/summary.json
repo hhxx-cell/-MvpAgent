@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checks": [
+    "health",
+    "qdrant",
+    "metrics",
+    "rag",
+    "sql",
+    "order",
+    "authorization",
+    "clarify",
+    "ticket",
+    "idempotency",
+    "trace"
+  ],
+  "ticket_id": "TA68372B4D762",
+  "trace_id": "tr_21723ebd342641bb96630d8abb21a595"
+}

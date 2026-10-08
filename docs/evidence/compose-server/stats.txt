@@ -1,0 +1,3 @@
+aftersales-data-agent-api-1 133.5MiB / 1.734GiB 0.04%
+aftersales-data-agent-qdrant-1 67.15MiB / 1.734GiB 0.03%
+aftersales-data-agent-mock-1 49.92MiB / 1.734GiB 0.04%

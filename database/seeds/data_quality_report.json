@@ -1,0 +1,22 @@
+{
+  "reasons": {
+    "duplicate_order_id": 4,
+    "missing_required_field": 3,
+    "unknown_status": 3
+  },
+  "rejected_records": 10,
+  "rejected_source_lines": [
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200
+  ],
+  "source_records": 200,
+  "valid_records": 190
+}

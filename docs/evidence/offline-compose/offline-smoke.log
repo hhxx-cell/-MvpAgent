@@ -1,0 +1,1 @@
+{"status": "passed", "checks": ["health", "qdrant", "metrics", "rag", "sql", "order", "authorization", "clarify", "ticket", "idempotency", "trace"], "ticket_id": "T0695000F7710", "trace_id": "tr_febef36967b349fa81dffd973acc6993"}

@@ -1,0 +1,9 @@
+{
+  "platform": "linux/amd64",
+  "created_at": "2026-10-08T03:53:42.842291+00:00",
+  "images": {
+    "aftersales-data-agent:local": "sha256:ecafff034cdb9b28de7cfa259e71ce21a74ab77e328addc957631de527c8e465",
+    "qdrant/qdrant:v1.13.6": "sha256:bd67306b6cc77c98122cada2321eb60b20d00b19d26cb61c86681e7bd5951498"
+  },
+  "gateway": "rules"
+}

@@ -1,0 +1,7 @@
+{
+  "documents": 30,
+  "chunks": 90,
+  "quarantined": [],
+  "collection": "aftersales_knowledge",
+  "embedding": "deterministic-char-ngram-v1"
+}

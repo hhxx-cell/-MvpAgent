@@ -1,0 +1,478 @@
+{
+  "anomaly_samples": [
+    {
+      "order_id": "O00002",
+      "reason": "missing_required_field:user_id",
+      "sample_id": "orders.jsonl:191",
+      "source_line": 191
+    },
+    {
+      "order_id": "O00003",
+      "reason": "missing_required_field:amount_cents",
+      "sample_id": "orders.jsonl:192",
+      "source_line": 192
+    },
+    {
+      "order_id": null,
+      "reason": "missing_required_field:order_id",
+      "sample_id": "orders.jsonl:193",
+      "source_line": 193
+    },
+    {
+      "order_id": "O00191",
+      "reason": "unknown_status",
+      "sample_id": "orders.jsonl:194",
+      "source_line": 194
+    },
+    {
+      "order_id": "O00192",
+      "reason": "unknown_status",
+      "sample_id": "orders.jsonl:195",
+      "source_line": 195
+    },
+    {
+      "order_id": "O00193",
+      "reason": "unknown_status",
+      "sample_id": "orders.jsonl:196",
+      "source_line": 196
+    },
+    {
+      "order_id": "O00001",
+      "reason": "duplicate_order_id",
+      "sample_id": "orders.jsonl:197",
+      "source_line": 197
+    },
+    {
+      "order_id": "O00002",
+      "reason": "duplicate_order_id",
+      "sample_id": "orders.jsonl:198",
+      "source_line": 198
+    },
+    {
+      "order_id": "O00003",
+      "reason": "duplicate_order_id",
+      "sample_id": "orders.jsonl:199",
+      "source_line": 199
+    },
+    {
+      "order_id": "O00004",
+      "reason": "duplicate_order_id",
+      "sample_id": "orders.jsonl:200",
+      "source_line": 200
+    }
+  ],
+  "currency": "CNY",
+  "demo_orders": {
+    "user_a": "O00001",
+    "user_b": "O00002"
+  },
+  "files": {
+    "database/ecommerce.db": {
+      "sha256": "c950bfc62132282307bbf36c45d1b2b91d4047f77906964bfe837e6e107b8944",
+      "size": 106496
+    },
+    "database/schema.sql": {
+      "sha256": "d6f47a6a709a48399bd4676a8bc0de4507556a39ecf2bac94f82f13365a38600",
+      "size": 1135
+    },
+    "database/schema_catalog.yaml": {
+      "sha256": "80f7029f448bca404c5af2be363b29c6012b9ab89f5c6bc8b89fefefe72b6940",
+      "size": 2763
+    },
+    "database/seeds/data_quality_report.json": {
+      "sha256": "a67dad62e22936a1accd67673ea7f9526512dcb390523085b88f24c40a60cdaf",
+      "size": 307
+    },
+    "database/seeds/orders.jsonl": {
+      "records": 200,
+      "sha256": "da36435962533630d556ec821c16f6cf943e014c0f0d58c118c0ffd82a00228b",
+      "size": 49517
+    },
+    "database/seeds/rejected_orders.jsonl": {
+      "records": 10,
+      "sha256": "4937c9ea3fe86a3eb61c55d713e8ee83bccc29091b0f831ca2b1a42f6c60f5b2",
+      "size": 3089
+    },
+    "eval/logs.jsonl": {
+      "records": 50,
+      "sha256": "55f6b4b958557d4bf244a618d9a1e1d7bb80d3ccc57f1f33b6970438aa966680",
+      "size": 24315
+    },
+    "knowledge/source/aftersales_ticket_v1.md": {
+      "sha256": "a10b812d0771611e2846c306ad2ccc1d1535f7e0364d6804b191a9a35de2d23c",
+      "size": 570
+    },
+    "knowledge/source/aftersales_ticket_v2.md": {
+      "sha256": "fdee4d69cd4ceb2dd86fd1ebe7f488913c393f1ea1b00cbd5f11abe7c89058a0",
+      "size": 570
+    },
+    "knowledge/source/aftersales_ticket_v3.md": {
+      "sha256": "69e860c838ee71d725475add7fbba1007fcb9da1cfab411a4b76e0aba1fc4cb8",
+      "size": 569
+    },
+    "knowledge/source/damaged_package_v1.md": {
+      "sha256": "fdcbd90f3c5565a893f4cdbca8feeb40e5e126dc34c297db197a3e0654e15645",
+      "size": 559
+    },
+    "knowledge/source/damaged_package_v2.md": {
+      "sha256": "df7a4cc29cf84711d749ee82ac14d25690f78a4405f0498864560229050725c6",
+      "size": 559
+    },
+    "knowledge/source/damaged_package_v3.md": {
+      "sha256": "366d78191404d4363ce7c9f0bac3dc7a63269b44aea550754438876a2509e8fa",
+      "size": 558
+    },
+    "knowledge/source/delivery_delay_v1.md": {
+      "sha256": "cb26a650587f8fbe357cb99becff200b6749b86a9e43597650bed851234fa610",
+      "size": 546
+    },
+    "knowledge/source/delivery_delay_v2.md": {
+      "sha256": "fc141f1df1b16538b122b4d881f69a91cf8683c97a70b8a7580d0110c3a541a5",
+      "size": 546
+    },
+    "knowledge/source/delivery_delay_v3.md": {
+      "sha256": "fc2e98b8682ec01db62acda32f4afb92b3b5346c69b34a2ada281c974221179e",
+      "size": 545
+    },
+    "knowledge/source/exchange_policy_v1.md": {
+      "sha256": "c2a8f5905c724695986e7cf46307a0653d338f30291b9259a35c3b6f6325d2a8",
+      "size": 525
+    },
+    "knowledge/source/exchange_policy_v2.md": {
+      "sha256": "2301148551908257af214bf7df98dca33b331c98545f19461d8dc73c4eb59582",
+      "size": 526
+    },
+    "knowledge/source/exchange_policy_v3.md": {
+      "sha256": "f70c87de2d07d0b75539489682d0094bcd762aeb03e63e83c5fabba04e626262",
+      "size": 525
+    },
+    "knowledge/source/invoice_policy_v1.md": {
+      "sha256": "3dcb6c997f047763059bd2bfeac39dde5f1a26377a531dfb2e2a1c295048b910",
+      "size": 561
+    },
+    "knowledge/source/invoice_policy_v2.md": {
+      "sha256": "2132ff38dc0cf5827a8dca8621763dcc79c16d1357880f8995516f7af558b955",
+      "size": 561
+    },
+    "knowledge/source/invoice_policy_v3.md": {
+      "sha256": "bc8e3a03944d37e7f7a4738bad3c1dd1f838ab402b57bc36dd313dd0471bae66",
+      "size": 560
+    },
+    "knowledge/source/price_protection_v1.md": {
+      "sha256": "4824e40fea342dcb94841deb04f46dde3d1483a505de0a3754daa0f52afe4509",
+      "size": 529
+    },
+    "knowledge/source/price_protection_v2.md": {
+      "sha256": "3f1aca74c56e8927b98d66988cd7e1673c12284744d8663887fe0b4b953eb77b",
+      "size": 529
+    },
+    "knowledge/source/price_protection_v3.md": {
+      "sha256": "93c603dd5196278399b51e391f32921d16096f3c868996991ccf798dbf3b23b2",
+      "size": 528
+    },
+    "knowledge/source/refund_policy_v1.md": {
+      "sha256": "271be6acaac7b292ed88e7e60fee0ee7f460316c4d79bf4b00028d7c927718ab",
+      "size": 577
+    },
+    "knowledge/source/refund_policy_v2.md": {
+      "sha256": "a1dc4cab9b4e0954541ccc89fe41ee00c4ac5d476525ef19b238916e4d56a23f",
+      "size": 577
+    },
+    "knowledge/source/refund_policy_v3.md": {
+      "sha256": "31990bab1cd991f935d50f402019244005417a430ab0ff4df020a131e4d6e743",
+      "size": 576
+    },
+    "knowledge/source/return_policy_v1.md": {
+      "sha256": "5db8f79de17fd70214588392d16b4965c71540cecea7ddf92685be29b259452c",
+      "size": 514
+    },
+    "knowledge/source/return_policy_v2.md": {
+      "sha256": "60337f6f5892039086cd39b1f719dc36cd73fd7015cb66103228b292d63b32ae",
+      "size": 515
+    },
+    "knowledge/source/return_policy_v3.md": {
+      "sha256": "ffc047c9aac391b314ea32c67d40d59fe088915243552dabdecddd8e91e9a93e",
+      "size": 514
+    },
+    "knowledge/source/shipping_policy_v1.md": {
+      "sha256": "6d31706b1b0a1d0b4a91079c29531d536e9fb8d465ce579dca3884d4c84c5691",
+      "size": 538
+    },
+    "knowledge/source/shipping_policy_v2.md": {
+      "sha256": "726b7a9cb223ac2b6ae80e319fd102909aaac270d39abad8acb339d3e610f393",
+      "size": 538
+    },
+    "knowledge/source/shipping_policy_v3.md": {
+      "sha256": "6fbfd5996125b36143e7ff3271e773ccb1e80af2c45021e278c82ef6beb5b10d",
+      "size": 537
+    },
+    "knowledge/source/warranty_policy_v1.md": {
+      "sha256": "423bfc06e5369bbf0ae2ac73ba9258a40ae285fb4fef92440b0554ddd7d1f5c6",
+      "size": 536
+    },
+    "knowledge/source/warranty_policy_v2.md": {
+      "sha256": "3d4444d7a8e269cda558a719724d5ae6108c615d4f2f4eb8d4c187efe0716d57",
+      "size": 536
+    },
+    "knowledge/source/warranty_policy_v3.md": {
+      "sha256": "0b2468e47645a56322a8cbc7733223183a2761bc1b1f4a8c1e584f3aca595842",
+      "size": 535
+    }
+  },
+  "generated_at": "2026-09-23T12:00:00+08:00",
+  "knowledge_document_count": 30,
+  "logistics_count": 190,
+  "policy_conflict_count": 10,
+  "policy_versions": {
+    "aftersales_ticket": [
+      1,
+      2,
+      3
+    ],
+    "damaged_package": [
+      1,
+      2,
+      3
+    ],
+    "delivery_delay": [
+      1,
+      2,
+      3
+    ],
+    "exchange_policy": [
+      1,
+      2,
+      3
+    ],
+    "invoice_policy": [
+      1,
+      2,
+      3
+    ],
+    "price_protection": [
+      1,
+      2,
+      3
+    ],
+    "refund_policy": [
+      1,
+      2,
+      3
+    ],
+    "return_policy": [
+      1,
+      2,
+      3
+    ],
+    "shipping_policy": [
+      1,
+      2,
+      3
+    ],
+    "warranty_policy": [
+      1,
+      2,
+      3
+    ]
+  },
+  "product_count": 20,
+  "raw_orders": 200,
+  "rejected_orders": 10,
+  "seed": 20260923,
+  "synthetic": true,
+  "timezone": "Asia/Shanghai",
+  "valid_order_ids": [
+    "O00001",
+    "O00002",
+    "O00003",
+    "O00004",
+    "O00005",
+    "O00006",
+    "O00007",
+    "O00008",
+    "O00009",
+    "O00010",
+    "O00011",
+    "O00012",
+    "O00013",
+    "O00014",
+    "O00015",
+    "O00016",
+    "O00017",
+    "O00018",
+    "O00019",
+    "O00020",
+    "O00021",
+    "O00022",
+    "O00023",
+    "O00024",
+    "O00025",
+    "O00026",
+    "O00027",
+    "O00028",
+    "O00029",
+    "O00030",
+    "O00031",
+    "O00032",
+    "O00033",
+    "O00034",
+    "O00035",
+    "O00036",
+    "O00037",
+    "O00038",
+    "O00039",
+    "O00040",
+    "O00041",
+    "O00042",
+    "O00043",
+    "O00044",
+    "O00045",
+    "O00046",
+    "O00047",
+    "O00048",
+    "O00049",
+    "O00050",
+    "O00051",
+    "O00052",
+    "O00053",
+    "O00054",
+    "O00055",
+    "O00056",
+    "O00057",
+    "O00058",
+    "O00059",
+    "O00060",
+    "O00061",
+    "O00062",
+    "O00063",
+    "O00064",
+    "O00065",
+    "O00066",
+    "O00067",
+    "O00068",
+    "O00069",
+    "O00070",
+    "O00071",
+    "O00072",
+    "O00073",
+    "O00074",
+    "O00075",
+    "O00076",
+    "O00077",
+    "O00078",
+    "O00079",
+    "O00080",
+    "O00081",
+    "O00082",
+    "O00083",
+    "O00084",
+    "O00085",
+    "O00086",
+    "O00087",
+    "O00088",
+    "O00089",
+    "O00090",
+    "O00091",
+    "O00092",
+    "O00093",
+    "O00094",
+    "O00095",
+    "O00096",
+    "O00097",
+    "O00098",
+    "O00099",
+    "O00100",
+    "O00101",
+    "O00102",
+    "O00103",
+    "O00104",
+    "O00105",
+    "O00106",
+    "O00107",
+    "O00108",
+    "O00109",
+    "O00110",
+    "O00111",
+    "O00112",
+    "O00113",
+    "O00114",
+    "O00115",
+    "O00116",
+    "O00117",
+    "O00118",
+    "O00119",
+    "O00120",
+    "O00121",
+    "O00122",
+    "O00123",
+    "O00124",
+    "O00125",
+    "O00126",
+    "O00127",
+    "O00128",
+    "O00129",
+    "O00130",
+    "O00131",
+    "O00132",
+    "O00133",
+    "O00134",
+    "O00135",
+    "O00136",
+    "O00137",
+    "O00138",
+    "O00139",
+    "O00140",
+    "O00141",
+    "O00142",
+    "O00143",
+    "O00144",
+    "O00145",
+    "O00146",
+    "O00147",
+    "O00148",
+    "O00149",
+    "O00150",
+    "O00151",
+    "O00152",
+    "O00153",
+    "O00154",
+    "O00155",
+    "O00156",
+    "O00157",
+    "O00158",
+    "O00159",
+    "O00160",
+    "O00161",
+    "O00162",
+    "O00163",
+    "O00164",
+    "O00165",
+    "O00166",
+    "O00167",
+    "O00168",
+    "O00169",
+    "O00170",
+    "O00171",
+    "O00172",
+    "O00173",
+    "O00174",
+    "O00175",
+    "O00176",
+    "O00177",
+    "O00178",
+    "O00179",
+    "O00180",
+    "O00181",
+    "O00182",
+    "O00183",
+    "O00184",
+    "O00185",
+    "O00186",
+    "O00187",
+    "O00188",
+    "O00189",
+    "O00190"
+  ],
+  "valid_orders": 190,
+  "version": "1.0.0"
+}

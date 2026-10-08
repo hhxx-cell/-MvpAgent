@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      MOCK_RANDOM_SEED: "20260923"
+      UV_NO_PROGRESS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install Python and locked dependencies
+        run: |
+          uv python install 3.12
+          uv sync --frozen --python 3.12 --extra dev
+      - name: Verify committed assets and save their fingerprints
+        run: |
+          uv run --no-sync python scripts/verify_data_manifest.py
+          uv run --no-sync python scripts/scan_synthetic_logs.py
+          cp data_manifest.json "${RUNNER_TEMP}/data_manifest.before.json"
+          uv run --no-sync python -c "from pathlib import Path; from eval.sqlite_fingerprint import logical_database_hash; print(logical_database_hash(Path('database/ecommerce.db')))" > "${RUNNER_TEMP}/sqlite.logical.before"
+      - name: Rebuild fixed-seed assets
+        run: |
+          uv run --no-sync python scripts/generate_seed_data.py --seed "${MOCK_RANDOM_SEED}"
+          uv run --no-sync python scripts/verify_data_manifest.py
+          uv run --no-sync python scripts/scan_synthetic_logs.py
+      - name: Reject generated data drift
+        run: |
+          uv run --no-sync python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          from eval.sqlite_fingerprint import logical_database_hash
+
+          baseline = json.loads((Path(os.environ["RUNNER_TEMP"]) / "data_manifest.before.json").read_text(encoding="utf-8"))
+          rebuilt = json.loads(Path("data_manifest.json").read_text(encoding="utf-8"))
+          if baseline["seed"] != rebuilt["seed"] or rebuilt["seed"] != int(os.environ["MOCK_RANDOM_SEED"]):
+              raise SystemExit("Fixed seed differs from the committed baseline")
+
+          # SQLite file bytes vary across SQLite versions. The logical digest checks
+          # every table, column, foreign key and row; the manifest verifier checks
+          # each raw file against the manifest generated on the current platform.
+          before_db = (Path(os.environ["RUNNER_TEMP"]) / "sqlite.logical.before").read_text(encoding="utf-8").strip()
+          after_db = logical_database_hash(Path("database/ecommerce.db"))
+          if before_db != after_db:
+              raise SystemExit("SQLite logical data changed after fixed-seed rebuild")
+          for manifest in (baseline, rebuilt):
+              manifest["files"].pop("database/ecommerce.db")
+          if baseline != rebuilt:
+              raise SystemExit("Committed asset manifest differs from fixed-seed rebuild")
+          print("Fixed-seed asset hashes and SQLite logical fingerprint match the committed baseline")
+          PY
+      - name: Check formatting, lint and tests
+        run: |
+          uv run --no-sync ruff check .
+          uv run --no-sync black --check .
+          uv run --no-sync pytest -q

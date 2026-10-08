@@ -1,0 +1,66 @@
+{
+  "answer_summary": "订单 [ORDER_ID] 当前状态为退款失败，金额 658.00 元（CNY），查询时间 2026-09-28T16:23:30+08:00。 如需创建售后工单，请确认上方操作预览。",
+  "citations": [],
+  "error_code": null,
+  "llm_tokens": 0,
+  "prompt_summary": "订单 [ORDER_ID] 的退款进度",
+  "recorded_at": "2026-09-28T08:23:30.568864+00:00",
+  "route": [
+    "order"
+  ],
+  "spans": [
+    {
+      "duration_ms": 0.0,
+      "ended_at": "2026-09-28T08:23:30.546360+00:00",
+      "name": "authentication",
+      "started_at": "2026-09-28T08:23:30.546360+00:00",
+      "status": "ok"
+    },
+    {
+      "duration_ms": 0.46,
+      "ended_at": "2026-09-28T08:23:30.550214+00:00",
+      "intents": [
+        "order"
+      ],
+      "name": "route",
+      "started_at": "2026-09-28T08:23:30.549750+00:00",
+      "status": "ok"
+    },
+    {
+      "duration_ms": 15.47,
+      "ended_at": "2026-09-28T08:23:30.567570+00:00",
+      "name": "tool_call",
+      "started_at": "2026-09-28T08:23:30.552097+00:00",
+      "status": "ok",
+      "tools": [
+        "query_order"
+      ]
+    },
+    {
+      "duration_ms": 0.02,
+      "ended_at": "2026-09-28T08:23:30.568355+00:00",
+      "name": "answer_verification",
+      "started_at": "2026-09-28T08:23:30.568338+00:00",
+      "status": "ok"
+    },
+    {
+      "duration_ms": 22.46,
+      "ended_at": "2026-09-28T08:23:30.568816+00:00",
+      "name": "response_stream",
+      "started_at": "2026-09-28T08:23:30.546358+00:00",
+      "status": "ok"
+    }
+  ],
+  "sql_template": null,
+  "tool_events": [
+    {
+      "status": "started",
+      "tool": "query_order"
+    },
+    {
+      "status": "success",
+      "tool": "query_order"
+    }
+  ],
+  "trace_id": "tr_238839663fdd4040a9bdfeda979b6298"
+}

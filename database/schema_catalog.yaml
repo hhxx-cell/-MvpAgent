@@ -1,0 +1,67 @@
+version: 1
+timezone: Asia/Shanghai
+currency: CNY
+money_storage: integer_cents
+principal:
+  tenant_column: tenant_id
+  user_column: user_id
+status_codes:
+  orders:
+    0: 待支付
+    1: 已支付
+    2: 已发货
+    3: 已完成
+    4: 退款处理中
+    5: 退款失败
+    6: 已退款
+    7: 已取消
+  logistics:
+    0: 待揽收
+    1: 运输中
+    2: 已签收
+    3: 运输异常
+tables:
+  orders:
+    description: 订单历史快照，用于用户授权后的统计和关系查询
+    primary_key: order_id
+    owner_columns: [tenant_id, user_id]
+    statuses: {0: 待支付, 1: 已支付, 2: 已发货, 3: 已完成, 4: 退款处理中, 5: 退款失败, 6: 已退款, 7: 已取消}
+    columns:
+      order_id: {type: text, description: 合成订单号}
+      user_id: {type: text, description: 订单所属用户, sensitive: true, returnable: false}
+      tenant_id: {type: text, description: 订单所属租户, sensitive: true, returnable: false}
+      sku_id: {type: text, description: 商品 SKU}
+      quantity: {type: integer, description: 商品数量, aggregatable: true}
+      amount_cents: {type: integer, description: 订单金额，单位分, aggregatable: true}
+      status: {type: integer, description: 订单状态，映射见 status_codes.orders}
+      created_at: {type: text, description: 下单时间，ISO 8601}
+      updated_at: {type: text, description: 状态快照时间，ISO 8601}
+      currency: {type: text, description: 币种，固定 CNY}
+  logistics:
+    description: 物流历史快照，必须通过 orders 关联后验证归属
+    primary_key: logistics_id
+    owner_via: orders
+    statuses: {0: 待揽收, 1: 运输中, 2: 已签收, 3: 运输异常}
+    columns:
+      logistics_id: {type: text, description: 物流记录号}
+      order_id: {type: text, description: 对应订单号}
+      carrier: {type: text, description: 承运商}
+      tracking_no: {type: text, description: 合成运单号, sensitive: true}
+      status: {type: integer, description: 物流状态，映射见 status_codes.logistics}
+      updated_at: {type: text, description: 物流状态更新时间，ISO 8601}
+      delivered_at: {type: text, description: 签收时间，ISO 8601，可空}
+  products:
+    description: 合成商品目录
+    primary_key: sku_id
+    owner_via: orders
+    columns:
+      sku_id: {type: text, description: 商品 SKU}
+      name: {type: text, description: 商品名称}
+      category: {type: text, description: 商品类别}
+      price_cents: {type: integer, description: 商品单价，单位分, aggregatable: true}
+joins:
+  - {left: orders.sku_id, right: products.sku_id}
+  - {left: logistics.order_id, right: orders.order_id}
+forbidden_return_columns:
+  - orders.user_id
+  - orders.tenant_id
