@@ -67,6 +67,27 @@ curl.exe -N -X POST http://127.0.0.1:8000/chat -H 'Authorization: Bearer demo-us
 
 可将 `message` 改为“退货政策是什么？”、“我上个月消费了多少元？”或“订单 O00001 的物流到哪了？”。SSE 事件包括 `step.started`、`tool.started`、`tool.completed`、`action.preview`、`message.delta`、`done` 和错误事件；不会输出模型内部推理。
 
+### RAG 政策问答演示
+
+在运行 API 的机器上执行：
+
+```sh
+curl -N -X POST http://127.0.0.1:8000/chat \
+  -H 'Authorization: Bearer demo-user-a' \
+  -H 'Content-Type: application/json' \
+  -d '{"conversation_id":"rag_demo_001","message":"退货政策是什么？"}'
+```
+
+Windows PowerShell 使用单行命令：
+
+```powershell
+curl.exe -N -X POST http://127.0.0.1:8000/chat -H 'Authorization: Bearer demo-user-a' -H 'Content-Type: application/json' --data-raw '{"conversation_id":"rag_demo_001","message":"退货政策是什么？"}'
+```
+
+响应中的 `step.started` 会出现 `retrieve`；答案引用当前生效的 `return_policy_v3.md`，`done.citations` 包含 `source_file`、`paragraph_id` 和 `effective_date`。可直接查看 [Linux Compose 的实际 SSE 记录](docs/evidence/compose-server/policy.sse)：其中引用了 `p-002` 和 `p-003`，生效日期为 2026-06-01。检索结果和路由也保存在受保护的 Trace 中。
+
+知识源在 `knowledge/source/`，启动时切成段落并写入 Qdrant；检索会过滤政策类别并只采用最新已生效版本。当前 MVP 使用本地确定性字符 n-gram 向量和**抽取式回答**，即从命中段落组织答案及引用；尚未使用大模型基于检索材料生成开放式答案。
+
 退款失败等异常订单会先返回 `action.preview`。复制其 `action_id`，在**同一** `conversation_id` 的下一轮明确确认：
 
 ```json
